@@ -7,29 +7,44 @@ from email.mime.base import MIMEBase
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+import pandas as pd
 import Functions.design_report_layout as layout
 import Functions.generate_data as gdata
 import Functions.read_gpm_info as gpm
 import path as d
 import Functions.banner_code as b
 
+
+
 def send_mail(gpm_name):
     b.banner()
     gdata.GenerateReport(gpm_name)
-    layout.generate_layout(gpm_name)
+
+    data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx', index=False)
+    if data.empty:
+        print('No data for print')
+    else:
+        print('Else working')
+        layout.generate_layout(gpm_name)
+
     to = gpm.getGPMEmail(gpm_name)
 
-    # if (to == ['drmizan@skf.transcombd.com', '']):
-    #     to = ['rejaul.islam@transcombd.com', '']
-    #     print(to)
+    if (to == ['mawla@skf.transcombd.com', '']):
+        to = ['rejaul.islam@transcombd.com', '']
+        cc = ['', '']
+        bcc = ['', '']
+        print('Report Sending to = ', to)
+
+    to = to
+    cc = cc
+    bcc = bcc
 
     msgRoot = MIMEMultipart('related')
     me = 'erp-bi.service@transcombd.com'
-    to = to
+    # to = to
     # cc = ['rejaul.islam@transcombd.com', '']
-    cc = ['biswascma@yahoo.com', 'yakub@transcombd.com', 'zubair.transcom@gmail.com']
-    bcc = ['rejaul.islam@transcombd.com', 'aftab.uddin@transcombd.com', 'fazle.rabby@transcombd.com']
+    # cc = ['biswascma@yahoo.com', 'yakub@transcombd.com', 'zubair.transcom@gmail.com']
+    # bcc = ['rejaul.islam@transcombd.com', 'aftab.uddin@transcombd.com', 'fazle.rabby@transcombd.com']
     # bcc = ['', '', 'fazle.rabby@transcombd.com']
     recipient = to + cc + bcc
 
