@@ -29,7 +29,7 @@ def send_mail(gpm_name):
 
     to = gpm.getGPMEmail(gpm_name)
 
-    if (to == ['mawla@skf.transcombd.com', '']):
+    if (to == ['drmizan@skf.transcombd.com', '']):
         to = ['rejaul.islam@transcombd.com', '']
         cc = ['', '']
         bcc = ['', '']
@@ -42,17 +42,9 @@ def send_mail(gpm_name):
     msgRoot = MIMEMultipart('related')
     me = 'erp-bi.service@transcombd.com'
     # to = to
-    # cc = ['rejaul.islam@transcombd.com', '']
     # cc = ['biswascma@yahoo.com', 'yakub@transcombd.com', 'zubair.transcom@gmail.com']
     # bcc = ['rejaul.islam@transcombd.com', 'aftab.uddin@transcombd.com', 'fazle.rabby@transcombd.com']
-    # bcc = ['', '', 'fazle.rabby@transcombd.com']
     recipient = to + cc + bcc
-
-    # msgRoot = MIMEMultipart('related')
-    # me = 'erp-bi.service@transcombd.com'
-    # # to = set_to_email(gpm_name)
-    # to = 'rejaul.islam@transcombd.com'
-    # recipient = to
 
     date = datetime.today()
     today = str(date.day) + '/' + str(date.month) + '/' + str(date.year) + ' ' + date.strftime("%I:%M %p")

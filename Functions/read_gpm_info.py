@@ -50,7 +50,7 @@ def getGPMNFullInfo(name):
     email = str(df['Email'].iloc[0])
     phone = str(df['Phone'].iloc[0])
     designation = str(df['Designation'].iloc[0])
-    brands = str(len(df.index))
+    brands = str(df['TotalBrands'].iloc[0])
 
     all = name + " || Designation : " + designation + " || Phone : " + phone + "  ||  Email : " + email + \
             " || Total Brands:"+ brands
@@ -60,6 +60,6 @@ def getGPMNFullInfo(name):
 # print(getGPMEmail('Akhter'))
 # print(getGPMNumberofBrands('Dr. Shafiqul Mawla'))
 
-print(getGPMNFullInfo('Dr. Shafiqul Mawla'))
+# print(getGPMNFullInfo('Dr. Shafiqul Mawla'))
 
 # print(getGPMEmail('Mr. Mohammad Akhter Alam Khan'))
