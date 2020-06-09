@@ -7,11 +7,11 @@ import Functions.send_mail as action
 
 
 
-action.send_mail('Dr. Mohammad Mizanur Rahman')
+# action.send_mail('Dr. Mohammad Mizanur Rahman')
 # action.send_mail('Dr. Shafiqul Mawla')
 
 
-# action.send_mail('Mr. A. K. M. Nawajesh Hossain')
+action.send_mail('Mr. A. K. M. Nawajesh Hossain')
 # action.send_mail('Mr. Fazal Mohammad Tanim')
 
 # action.send_mail('Mr. Mohammad Akhter Alam Khan')

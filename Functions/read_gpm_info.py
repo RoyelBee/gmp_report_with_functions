@@ -60,6 +60,6 @@ def getGPMNFullInfo(name):
 # print(getGPMEmail('Akhter'))
 # print(getGPMNumberofBrands('Dr. Shafiqul Mawla'))
 
-# print(getGPMNFullInfo('Dr. Shafiqul Mawla'))
+# print(getGPMNFullInfo('Mr. Rubaeadul Hasan Lashkar'))
 
 # print(getGPMEmail('Mr. Mohammad Akhter Alam Khan'))

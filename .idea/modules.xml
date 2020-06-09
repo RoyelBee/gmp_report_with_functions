@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Final_task_report/.idea/Final_task_report.iml" filepath="$PROJECT_DIR$/../Final_task_report/.idea/Final_task_report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../NDM_wise_Outstanding/.idea/NDM_wise_Outstanding.iml" filepath="$PROJECT_DIR$/../NDM_wise_Outstanding/.idea/NDM_wise_Outstanding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WhatsAppMSG/.idea/WhatsAppMSG.iml" filepath="$PROJECT_DIR$/../WhatsAppMSG/.idea/WhatsAppMSG.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/gmp_report_with_functions.iml" filepath="$PROJECT_DIR$/.idea/gmp_report_with_functions.iml" />
     </modules>
   </component>
