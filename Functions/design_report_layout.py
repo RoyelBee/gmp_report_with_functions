@@ -5,6 +5,7 @@ import Functions.sales_and_stock_record as SalesStock
 
 
 def generate_layout(gpm_name):
+    print('GPM Name  = ', gpm_name)
     results = """ <!DOCTYPE html>
             <html>
             <head>

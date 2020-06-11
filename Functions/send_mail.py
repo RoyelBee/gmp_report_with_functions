@@ -29,7 +29,7 @@ def send_mail(gpm_name):
 
     to = gpm.getGPMEmail(gpm_name)
 
-    if (to == ['drmizan@skf.transcombd.com', '']):
+    if (to == ['nawajesh@skf.transcombd.com', '']):
         to = ['rejaul.islam@transcombd.com', '']
         cc = ['', '']
         bcc = ['', '']
