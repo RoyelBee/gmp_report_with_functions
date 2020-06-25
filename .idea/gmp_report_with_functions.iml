@@ -6,7 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Final_task_report" />
     <orderEntry type="module" module-name="WhatsAppMSG" />
-    <orderEntry type="module" module-name="NDM_wise_Outstanding" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="renderExternalDocumentation" value="true" />
