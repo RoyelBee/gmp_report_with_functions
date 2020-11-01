@@ -1,4 +1,3 @@
-
 import Functions.no_sales_record as noSales
 import Functions.no_stock_record as noStock
 import Functions.read_gpm_info as gpm
@@ -183,7 +182,6 @@ def generate_layout(gpm_name):
                     border: 1px solid #0f6674;
                     }
                     
-    
                 .float_left {
                     width: 50%;
                     float: left;
@@ -196,7 +194,8 @@ def generate_layout(gpm_name):
                 <img src="cid:banner_ai"> <br>
                 <img src="cid:dash"> <br>
                 <img src="cid:cm"> <br>
-                <table border="1px solid gray" width="960px" class="float_left">
+                
+                <table border="1px solid gray" width="77%">
                     <tr>
                         <th colspan="5" style="background-color: #cbe14c"><h1>No Sales Item: Last 3 Months</h1></th>
                     </tr>
@@ -208,11 +207,11 @@ def generate_layout(gpm_name):
                         <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UOM</th>
                     </tr>
     
-                    <tr>""" + noSales.get_No_Sales_Records() + """
+                    <tr> """ + noSales.get_No_Sales_Records() + """
                 </table>
            
            <br>
-                <table border="1px solid gray" width="1200px" class="float_left">
+                <table border="1px solid gray" width="77%">
                     <tr>
                         <th colspan="7" style="background-color: #34ce57;"><h1> No Stocks Item: Last 3 Months</h1></th>
                     </tr>

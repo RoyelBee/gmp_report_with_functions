@@ -17,13 +17,13 @@ import Functions.banner_code as b
 
 
 def send_mail(gpm_name):
-    b.banner()
-    gdata.GenerateReport(gpm_name)
-    import Functions.dashboard as dash
-    dash.dash_kpi_generator(gpm_name)
-
-    import Functions.cumulative_target_sales as cm
-    cm.cumulative_target_sales(gpm_name)
+    # b.banner()
+    # gdata.GenerateReport(gpm_name)
+    # import Functions.dashboard as dash
+    # dash.dash_kpi_generator(gpm_name)
+    #
+    # import Functions.cumulative_target_sales as cm
+    # cm.cumulative_target_sales(gpm_name)
 
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
     if data.empty:
