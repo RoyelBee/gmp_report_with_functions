@@ -22,6 +22,9 @@ def send_mail(gpm_name):
     import Functions.dashboard as dash
     dash.dash_kpi_generator(gpm_name)
 
+    import Functions.cumulative_target_sales as cm
+    cm.cumulative_target_sales(gpm_name)
+
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
     if data.empty:
         print('No data for print')
@@ -91,6 +94,13 @@ def send_mail(gpm_name):
     fp.close()
     dash.add_header('Content-ID', '<dash>')
     msgRoot.attach(dash)
+
+    # --- Read Cumulative Target & Sales Images
+    fp = open(d.get_directory() + '/images/Cumulative_Day_Wise_Target_vs_Sales.png', 'rb')
+    cm = MIMEImage(fp.read())
+    fp.close()
+    cm.add_header('Content-ID', '<cm>')
+    msgRoot.attach(cm)
 
     # Add GPM sales and stock dataset
     part = MIMEBase('application', "octet-stream")

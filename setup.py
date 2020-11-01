@@ -23,7 +23,7 @@ except:
     error.send_error_msg('Dr. Shafiqul Mawla')
 
 
-# # # --------- GPM Mr. A. K. M. Nawajesh Hossain  -------------------------
+# # # --------- GPM Mr. A. K. M. Nawajesh Hossain  -----------------------
 # try:
 #     action.send_mail('Mr. A. K. M. Nawajesh Hossain')
 # except:

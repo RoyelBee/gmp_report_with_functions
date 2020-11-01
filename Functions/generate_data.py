@@ -38,7 +38,7 @@ def GenerateReport(gpm_name):
                 ,ISNULL(BRAND, 0) BRAND
 
                 ,ROW_NUMBER() OVER (ORDER BY ProductBrand.Brand)   [ISL NO]
-                ,ISNULL(ProductBrand.Itemname, 'Not Found')[Item Name]
+                , ISNULL(ProductBrand.Itemname, 'Not Found') [Item Name]
                 ,PACKSIZE as UOM
                 ,ISNULL(CAST(Sales.AvgSalesDay AS INT), 0) [Avg Sales/Day]
                 ,ISNULL(CAST(ItemTarget.ST AS INT), 0) [Monthly Sales Target]
@@ -123,7 +123,7 @@ def GenerateReport(gpm_name):
                 ISNULL(CAST(oeorder.QTYordered AS INT), 0) [Total Ordered],
                 ISNULL(EstimateSales, 0) [Estimated Sales]
                 from
-                (select ITEMNO,[ITEMNAME] as Itemname,BRAND,PACKSIZE from PRINFOSKF where ITEMNO not like '9%'
+                (select distinct ITEMNO,  [ITEMNAME] as Itemname, BRAND,PACKSIZE from PRINFOSKF where ITEMNO not like '9%'
                 and BRAND IN (SELECT BRAND FROM GPMBRAND WHERE Name like ?)
                 ) as ProductBrand
                 Left join
@@ -219,7 +219,7 @@ def GenerateReport(gpm_name):
 
                 left join
                 (select item, SUM(QTYordered) as QTYordered, cast(SUM(QTYordered)*UNITPRICE as int) as EstimateSales from OEOrderDetails
-                where ORDERDATE between  convert(varchar(10),DATEADD(mm, DATEDIFF(mm, 0, GETDATE()), 0),112) 
+                where ORDERDATE between convert(varchar(10),DATEADD(mm, DATEDIFF(mm, 0, GETDATE()), 0),112) 
                 and convert(varchar(8),getdate(), 112) 
                 group by item, UNITPRICE
 
