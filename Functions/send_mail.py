@@ -19,6 +19,8 @@ import Functions.banner_code as b
 def send_mail(gpm_name):
     b.banner()
     gdata.GenerateReport(gpm_name)
+    import Functions.dashboard as dash
+    dash.dash_kpi_generator(gpm_name)
 
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
     if data.empty:
@@ -82,6 +84,13 @@ def send_mail(gpm_name):
     fp.close()
     banner_ai.add_header('Content-ID', '<banner_ai>')
     msgRoot.attach(banner_ai)
+
+    # --- Read Dashboard KPI Images
+    fp = open(d.get_directory() + '/images/dash_kpi.png', 'rb')
+    dash = MIMEImage(fp.read())
+    fp.close()
+    dash.add_header('Content-ID', '<dash>')
+    msgRoot.attach(dash)
 
     # Add GPM sales and stock dataset
     part = MIMEBase('application', "octet-stream")

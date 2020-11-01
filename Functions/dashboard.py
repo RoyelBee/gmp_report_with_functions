@@ -1,3 +1,4 @@
+
 from PIL import Image, ImageFont, ImageDraw
 import pyodbc
 import pandas as pd
@@ -86,5 +87,6 @@ def dash_kpi_generator(name):
     draw.text((830, 220), str(round(trend_achivement, 1))+'%', font=font, fill=(255, 255, 255))
     # image.show()
     image.save('./Images/dash_kpi.png')
+    print('Dashboard KPi Generated')
 
 

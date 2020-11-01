@@ -194,6 +194,7 @@ def generate_layout(gpm_name):
             </head>
             <body>
                 <img src="cid:banner_ai"> <br>
+                <img src="cid:dash"> <br>
                 <table border="1px solid gray" width="960px" class="float_left">
                     <tr>
                         <th colspan="5" style="background-color: #cbe14c"><h1>No Sales Item: Last 3 Months</h1></th>
