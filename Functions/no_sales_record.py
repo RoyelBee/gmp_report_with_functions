@@ -10,8 +10,8 @@ def get_No_Sales_Records():
     wb = xlrd.open_workbook('Data/NoSales.xlsx')
     sh = wb.sheet_by_name('Sheet1')
     print('No Sales dataset Start printing in HTML')
-    tabletd = ""
 
+    tabletd = ""
     for i in range(1, sh.nrows):
         tabletd = tabletd + "<tr>\n"
         for j in range(0, 1):

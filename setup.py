@@ -9,19 +9,20 @@ import error_alert as error
 
 
 # # --------- GPM Dr. Mohammad Mizanur Rahman -----------------------------
-try:
-    action.send_mail('Dr. Mohammad Mizanur Rahman')
-except:
-    error.send_error_msg('Dr. Mohammad Mizanur Rahman')
+# try:
+#     action.send_mail('Dr. Mohammad Mizanur Rahman')
+# except:
+#     error.send_error_msg('Dr. Mohammad Mizanur Rahman')
 
 
 # # --------- GPM Dr. Shafiqul Mawla  ------------------------------------
-# try:
-#     action.send_mail('Dr. Shafiqul Mawla')
-# except:
-#     error.send_error_msg('Dr. Shafiqul Mawla')
-#
-#
+
+try:
+    action.send_mail('Dr. Shafiqul Mawla')
+except:
+    error.send_error_msg('Dr. Shafiqul Mawla')
+
+
 # # # --------- GPM Mr. A. K. M. Nawajesh Hossain  -------------------------
 # try:
 #     action.send_mail('Mr. A. K. M. Nawajesh Hossain')

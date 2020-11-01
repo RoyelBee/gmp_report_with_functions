@@ -219,7 +219,8 @@ def GenerateReport(gpm_name):
 
                 left join
                 (select item, SUM(QTYordered) as QTYordered, cast(SUM(QTYordered)*UNITPRICE as int) as EstimateSales from OEOrderDetails
-                where ORDERDATE between '20200122'  and '20200322'
+                where ORDERDATE between  convert(varchar(10),DATEADD(mm, DATEDIFF(mm, 0, GETDATE()), 0),112) 
+                and convert(varchar(8),getdate(), 112) 
                 group by item, UNITPRICE
 
                 ) as OEOrder
@@ -230,42 +231,43 @@ def GenerateReport(gpm_name):
     df.to_excel('Data/gpm_data.xlsx', index=False)
     print('Query execution done')
 
-    data_for_html = pd.read_excel('Data/gpm_data.xlsx', index=False)
+    data_for_html = pd.read_excel('./Data/gpm_data.xlsx')
     data = data_for_html[data_for_html['Avg Sales/Day'] != 0]
+
     html_data = data.drop(data.columns[[2, 82, 83]], axis=1)
     html_data.insert(loc=2, column='ISL NO', value=np.arange(len(html_data)) + 1)
-    html_data.to_excel('Data/html_data_Sales_and_Stock.xlsx', index=False)
+    html_data.to_excel('./Data/html_data_Sales_and_Stock.xlsx', index=False)
     print('HTML data File  Saved')
 
-    df = pd.read_excel('Data/gpm_data.xlsx', index=False)
+    df = pd.read_excel('./Data/gpm_data.xlsx')
     df1 = df.drop(df.columns[[2]], axis=1)
     df0 = df1[df1['Avg Sales/Day'] != 0]
     df0.to_excel('Data/gpm_data1.xlsx', index=False)
-    aa = pd.read_excel('Data/gpm_data1.xlsx', index=False)
+    aa = pd.read_excel('./Data/gpm_data1.xlsx')
     aa.insert(loc=2, column='ISL NO', value=np.arange(len(df0)) + 1)
     aa = aa.drop(aa.columns[[18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
                              41, 42, 43, 44, 45, 46, 47, 48, 82, 83]], axis=1)
     aa.to_excel('Data/Sales_and_Stock.xlsx', index=False)
 
-    print('Data Saved')
+    print('Sales and Stock Data Saved')
 
-    df = pd.read_excel('Data/gpm_data.xlsx', index=False)
+    df = pd.read_excel('./Data/gpm_data.xlsx')
     df1 = df.drop(df.columns[[2]], axis=1)
     df0 = df1[df1['Avg Sales/Day'] == 0]
     df0 = df0.drop(
         df0.columns[[18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
                      41, 42, 43, 44, 45, 46, 47, 48]], axis=1)
-    df0.to_excel('Data/gpm_data1.xlsx', index=False)
-    bb = pd.read_excel('Data/gpm_data1.xlsx', index=False)
+    df0.to_excel('./Data/gpm_data1.xlsx', index=False)
+    bb = pd.read_excel('./Data/gpm_data1.xlsx')
     bb.insert(loc=2, column='ISL NO', value=np.arange(len(df0)) + 1)
     bb = bb[['BSL NO', 'BRAND', 'ISL NO', 'Item Name', 'UOM']]
     bb.to_excel('Data/NoSales.xlsx', index=False)
-    print('No sales Dataset Created')
+    print('No sales Dataset Saved')
 
-    all_data = pd.read_excel('Data/gpm_data.xlsx', index=False)
+    all_data = pd.read_excel('./Data/gpm_data.xlsx')
     data = all_data[all_data['Nationwide Stock'] == 0]
     data = data.drop(data.columns[[2]], axis=1)
     data.insert(loc=2, column='ISL NO', value=np.arange(len(data)) + 1)
     noData = data[['BSL NO', 'BRAND', 'ISL NO', 'Item Name', 'UOM', 'Total Ordered', 'Estimated Sales']]
     noData.to_excel('Data/NoStock.xlsx', index=False)
-    print('No Stock Data Created')
+    print('No Stock Data Saved')

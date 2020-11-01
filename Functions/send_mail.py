@@ -20,7 +20,7 @@ def send_mail(gpm_name):
     b.banner()
     gdata.GenerateReport(gpm_name)
 
-    data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx', index=False)
+    data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
     if data.empty:
         print('No data for print')
     else:
@@ -29,21 +29,21 @@ def send_mail(gpm_name):
 
     to = gpm.getGPMEmail(gpm_name)
 
-    # if (to == ['drmizan@skf.transcombd.com', '']):
-    #     to = ['rejaul.islam@transcombd.com', '']
-    #     cc = ['', '']
-    #     bcc = ['', '']
-    #     print('Report Sending to = ', to)
-    #
-    # to = to
-    # cc = cc
-    # bcc = bcc
+    if (to == ['mawla@skf.transcombd.com', '']):
+        to = ['rejaul.islam@transcombd.com', '']
+        cc = ['', '']
+        bcc = ['', '']
+        print('Report Sending to = ', to)
+
+    to = to
+    cc = cc
+    bcc = bcc
 
     msgRoot = MIMEMultipart('related')
     me = 'erp-bi.service@transcombd.com'
-    to = to
-    cc = ['biswascma@yahoo.com', 'yakub@transcombd.com', 'zubair.transcom@gmail.com']
-    bcc = ['rejaul.islam@transcombd.com', 'aftab.uddin@transcombd.com', 'fazle.rabby@transcombd.com']
+    # to = to
+    # cc = ['biswascma@yahoo.com', 'yakub@transcombd.com', 'zubair.transcom@gmail.com']
+    # bcc = ['rejaul.islam@transcombd.com', 'aftab.uddin@transcombd.com', 'fazle.rabby@transcombd.com']
 
     recipient = to + cc + bcc
 

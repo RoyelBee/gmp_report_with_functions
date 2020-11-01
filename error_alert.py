@@ -53,7 +53,7 @@ def send_error_msg(name):
 
     # # We reference the image in the IMG SRC attribute by the ID we give it below
     msgText = MIMEText("""
-                                     <h2>Failed to Generate GPM [ """ + name + """ ] Report </h2>
+                                     <h2>Failed to Generate [ """ + name + """ ] Branch Report </h2>
                                       
 
                                     """, 'html')
@@ -64,7 +64,7 @@ def send_error_msg(name):
     server = smtplib.SMTP(email_server_host, port)
     server.ehlo()
     print('\n-----------------')
-    print('Sending Mail')
+    print('Sending Error Mail')
     server.sendmail(me, recipient, msgRoot.as_string())
     print('Mail Send')
     print('-------------------')
