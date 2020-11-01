@@ -194,6 +194,7 @@ def generate_layout(gpm_name):
                 <img src="cid:banner_ai"> <br>
                 <img src="cid:dash"> <br>
                 <img src="cid:cm"> <br>
+                <img src="cid:brand"> <br>
                 
                 <table border="1px solid gray" width="77%">
                     <tr>

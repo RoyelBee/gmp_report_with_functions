@@ -5,9 +5,9 @@ import pyodbc
 import sys
 import numpy as np
 
-def brand_wise_target_sales():
 
-    df = pd.read_excel('../Data/gpm_data.xlsx')
+def brand_wise_target_sales():
+    df = pd.read_excel('./Data/gpm_data.xlsx')
     read_file_for_all_data = df[df['MTD Sales Target'] != 0]
     read_file_for_all_data = read_file_for_all_data.sort_values('Actual Sales MTD', ascending=False)
 
@@ -30,14 +30,13 @@ def brand_wise_target_sales():
     plt.xticks(new_list, brand, rotation=90)
     plt.ylabel('Sales', fontsize=14, color='black', fontweight='bold')
 
-
     plt.rcParams['text.color'] = 'black'
 
     for bar, achv in zip(bars, mtd_achivemet):
         yval = bar.get_height()
         wval = bar.get_width()
         data = format(int(yval), ',') + '\n' + str(achv) + '%'
-        plt.text(bar.get_x() - wval/2, yval * .6, data)
+        plt.text(bar.get_x() - wval / 2, yval * .6, data)
 
     lines = plt.plot(new_list, mtd_target, 'o-', color='Red')
     plt.yticks(np.arange(0, max(mtd_target) + 0.5 * max(mtd_target), max(mtd_target) / 5))
@@ -46,9 +45,8 @@ def brand_wise_target_sales():
         label = format(int(j), ',')
         plt.annotate(label, (i, j), textcoords="offset points", xytext=(0, 5), ha='center', rotation=45)
 
-
     plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
 
     plt.tight_layout()
     # plt.show()
-    plt.savefig('../Images/brand_wise_target_vs_sold_quantity.png')
+    plt.savefig('./Images/brand_wise_target_vs_sold_quantity.png')

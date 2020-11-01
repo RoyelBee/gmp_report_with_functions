@@ -22,8 +22,11 @@ def send_mail(gpm_name):
     # import Functions.dashboard as dash
     # dash.dash_kpi_generator(gpm_name)
     #
-    # import Functions.cumulative_target_sales as cm
-    # cm.cumulative_target_sales(gpm_name)
+    import Functions.cumulative_target_sales as cm
+    cm.cumulative_target_sales(gpm_name)
+
+    import Functions.brand_wise_target_sales as b
+    b.brand_wise_target_sales()
 
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
     if data.empty:
@@ -101,6 +104,13 @@ def send_mail(gpm_name):
     fp.close()
     cm.add_header('Content-ID', '<cm>')
     msgRoot.attach(cm)
+
+    # --- Read Cumulative Target & Sales Images
+    fp = open(d.get_directory() + '/images/brand_wise_target_vs_sold_quantity.png', 'rb')
+    brand = MIMEImage(fp.read())
+    fp.close()
+    brand.add_header('Content-ID', '<brand>')
+    msgRoot.attach(brand)
 
     # Add GPM sales and stock dataset
     part = MIMEBase('application', "octet-stream")
