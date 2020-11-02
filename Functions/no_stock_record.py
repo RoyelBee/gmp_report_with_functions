@@ -52,3 +52,22 @@ def get_No_Stock_Records():
         table1 = tabletd + "</tr>\n"
     print("No Sales table Created")
     return table1
+
+
+def get_No_Stock_Records1():
+    wb = xlrd.open_workbook('Data/NOStock.xlsx', sheet_name='Sheet1')
+    sh = wb.sheet_by_name('Sheet1')
+    th = ""
+    td = ""
+    for i in range(0, 1):
+        th = th + "<tr>\n"
+        th = th + "<th class=\"table7head\">SL</th>"
+
+        for j in range(0, sh.ncols):
+            th = th + "<th class=\"table7head\" >" + str(sh.cell_value(i, j)) + "</th>\n"
+            th = th + "</tr>\n"
+
+
+        table1 = th + td + "</tr>\n"
+        print("No Sales table Created")
+        return table1

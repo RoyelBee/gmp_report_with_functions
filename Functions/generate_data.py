@@ -8,7 +8,7 @@ import Functions.db_connection as conn
 def GenerateReport(gpm_name):
     print('Query Execuring ...')
     sql_queryes = """
-               declare @thismonth varchar(6)
+                declare @thismonth varchar(6)
                 declare @firstday varchar(8)
                 declare @pdatefrom varchar(8)
                 declare @pdateTo varchar(8)

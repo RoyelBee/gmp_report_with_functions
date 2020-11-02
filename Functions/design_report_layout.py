@@ -228,6 +228,8 @@ def generate_layout(gpm_name):
                     <tr> """ + noStock.get_No_Stock_Records() + """
                 </table>
                 
+          
+                
                 <table border="1px solid gray" cellspacing ="20">
                  <tr>
                     <th colspan="15" class="info"> """ + gpm.getGPMNFullInfo(gpm_name) + """ </th>

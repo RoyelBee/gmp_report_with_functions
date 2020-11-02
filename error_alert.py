@@ -55,18 +55,17 @@ def send_error_msg(name):
     msgText = MIMEText("""
                                      <h2>Failed to Generate [ """ + name + """ ] Branch Report </h2>
                                       
-
                                     """, 'html')
     msgAlternative.attach(msgText)
 
 
     # # ----------- Finally send mail and close server connection -----
-    server = smtplib.SMTP(email_server_host, port)
-    server.ehlo()
-    print('\n-----------------')
-    print('Sending Error Mail')
-    server.sendmail(me, recipient, msgRoot.as_string())
-    print('Mail Send')
-    print('-------------------')
-    server.close()
+    # server = smtplib.SMTP(email_server_host, port)
+    # server.ehlo()
+    # print('\n-----------------')
+    # print('Sending Error Mail')
+    # server.sendmail(me, recipient, msgRoot.as_string())
+    # print('Mail Send')
+    # print('-------------------')
+    # server.close()
 
