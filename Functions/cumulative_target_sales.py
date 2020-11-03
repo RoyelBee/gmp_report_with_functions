@@ -158,12 +158,13 @@ def cumulative_target_sales(name):
 
     except:
         plt.subplots(figsize=(9.6, 4.8))
-        plt.text(0.2, 0.5, 'Due to target unavailability the chart could not get generated.', color='red', fontsize=14)
+        plt.text(0.2, 0.5, 'Due to target unavailability the chart could not get generated.', color='red', \
+                                                                                                      fontsize=14)
         plt.xlabel('Days', color='black', fontsize=14, fontweight='bold')
         plt.ylabel('Amount(K)', color='black', fontsize=10, fontweight='bold')
         plt.title('Cumulative Day Wise Stock & Sales', color='black', fontweight='bold', fontsize=12)
 
-        plt.legend(['Target', 'Sales'], loc='upper left', fontsize='14')
+        # plt.legend(['Target', 'Sales'], loc='upper left', fontsize='14')
         plt.tight_layout()
 
         plt.savefig("./Images/Cumulative_Day_Wise_Target_vs_Sales.png")

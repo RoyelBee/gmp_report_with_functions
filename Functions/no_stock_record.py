@@ -10,7 +10,7 @@ def get_No_Stock_Records():
 
     wb = xlrd.open_workbook('Data/NOStock.xlsx')
     sh = wb.sheet_by_name('Sheet1')
-    print('No Sales dataset Start printing in HTML')
+    # print('No Sales dataset Start printing in HTML')
     tabletd = ""
 
     for i in range(1, sh.nrows):
@@ -50,7 +50,7 @@ def get_No_Stock_Records():
                                                                                                      j))))) + "</td>\n"
 
         table1 = tabletd + "</tr>\n"
-    print("No Sales table Created")
+    print("No Stock table Created")
     return table1
 
 

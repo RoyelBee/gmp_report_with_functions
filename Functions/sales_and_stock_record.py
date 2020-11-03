@@ -11,7 +11,7 @@ def get_Sales_and_Stock_Records():
 
     wb = xlrd.open_workbook('Data/html_data_Sales_and_Stock.xlsx')
     sh = wb.sheet_by_name('Sheet1')
-    print('GPM Salse and Stock dataset Start printing in HTML')
+    # print('GPM Salse and Stock dataset Start printing in HTML')
     tabletd = ""
 
     for i in range(1, sh.nrows):
@@ -334,5 +334,5 @@ def get_Sales_and_Stock_Records():
                       str(ofn.warning(vrb, VRB)) + "\">" + str(ofn.number_style(str(VRB))) + "</td>\n"
 
         table = tabletd + "</tr>\n"
-    print("table Created")
+    print("Master Table Created")
     return table

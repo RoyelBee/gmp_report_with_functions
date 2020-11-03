@@ -57,7 +57,7 @@ def brand_wise_target_sales():
         plt.text(0.2, 0.5, 'Due to target unavailability the chart could not get generated.', color='red', fontsize=14)
         plt.xlabel('Brand', fontsize=14, color='black', fontweight='bold')
         plt.ylabel('Sales', fontsize=14, color='black', fontweight='bold')
-        plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
+        # plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
 
         plt.tight_layout()
         # plt.show()

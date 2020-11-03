@@ -7,7 +7,7 @@ from datetime import datetime
 import path as dir
 print(dir.get_directory())
 
-def banner():
+def banner(gpm_name):
     date = datetime.today()
     day = str(date.day) + '/' + str(date.month) + '/' + str(date.year)
     tz_NY = pytz.timezone('Asia/Dhaka')
@@ -21,18 +21,20 @@ def banner():
     time = datetime_BD.strftime("%I:%M %p")
 
     img = Image.open(dir.get_directory() + "/images/new_ai.png")
-    title = ImageDraw.Draw(img)
+    name = ImageDraw.Draw(img)
     timestore = ImageDraw.Draw(img)
     tag = ImageDraw.Draw(img)
     branch = ImageDraw.Draw(img)
     font = ImageFont.truetype(dir.get_directory() + "/images/Stencil_Regular.ttf", 40, encoding="unic")
+    name_font = ImageFont.truetype(dir.get_directory() + "/images/Lobster-Regular.ttf", 30, encoding="unic")
     font1 = ImageFont.truetype(dir.get_directory() + "/images/ROCK.ttf", 30, encoding="unic")
-    font2 = ImageFont.truetype(dir.get_directory() + "/images/ROCK.ttf", 22, encoding="unic")
+    font2 = ImageFont.truetype(dir.get_directory() + "/images/ROCK.ttf", 25, encoding="unic")
     report_name = 'GPM '
-    #
+    n = gpm_name
     tag.text((25, 8), 'SK+F', (255, 255, 255), font=font)
-    branch.text((25, 130), report_name + " Stock Report", (255, 209, 0), font=font1)
-    timestore.text((25, 178), time + "\n" + day, (255, 255, 255), font=font2)
+    branch.text((25, 130), report_name + "Sales and Stock Report", (255, 209, 0), font=font1)
+    name.text((25, 180), n , (255, 255, 255), font=name_font)
+    timestore.text((820, 10),'  ' +time + "\n" + day, (255, 255, 255), font=font2)
     img.save(dir.get_directory() + "/images/banner_ai.png")
     # img.show()
     print("Banner Created")

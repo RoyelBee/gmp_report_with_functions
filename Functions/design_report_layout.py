@@ -197,12 +197,12 @@ def generate_layout(gpm_name):
                 <img src="cid:executive"> <br>
                 <img src="cid:brand"> <br>
                 
-                <table border="1px solid gray" width="77%">
+                <table border="1px solid gray" width="78.5%">
                     <tr>
                         <th colspan="5" style="background-color: #cbe14c"><h1>No Sales Item: Last 3 Months</h1></th>
                     </tr>
                     <tr>
-                        <th rowspan="2" class="brand">BSL<br> No.</th>
+                        <th rowspan="2" class="brand">BSL No</th>
                         <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
                         <th rowspan="2" class="item_sl">Item SL</th>
                         <th rowspan="2" class="description1">Item Description</th>
@@ -213,12 +213,12 @@ def generate_layout(gpm_name):
                 </table>
            
            <br>
-                <table border="1px solid gray" width="77%">
+                <table border="1px solid gray" width="78.5%">
                     <tr>
                         <th colspan="7" style="background-color: #34ce57;"><h1> No Stocks Item: Last 3 Months</h1></th>
                     </tr>
                     <tr>
-                        <th rowspan="2" class="brand">BSL<br> No.</th>
+                        <th rowspan="2" class="brand">BSL No</th>
                         <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
                         <th rowspan="2" class="item_sl">Item SL</th>
                         <th rowspan="2" class="description1">Item Description</th>
