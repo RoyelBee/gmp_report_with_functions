@@ -18,7 +18,7 @@ connection = db.connect('DRIVER={SQL Server};'
 def getGPMName(name):
     df = pd.read_sql_query(""" select Name, Email, count(brand) as TotalBrands from GPMBRAND
             where Name like ?
-            group by Name, Email""", connection, params={name})
+            group by Name, Email """, connection, params={name})
     name = df['Name'].iloc[0]
     return name
 

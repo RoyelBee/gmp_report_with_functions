@@ -17,7 +17,7 @@ def brand_wise_target_sales():
         mtd_target = read_file_for_all_data['MTD Sales Target'].to_list()
         mtd_achivemet = read_file_for_all_data['MTD Sales Acv'].to_list()
 
-        fig, ax = plt.subplots(figsize=(9.6, 4.8))
+        plt.subplots(figsize=(18, 6))
         colors = ['#3F93D0']
         bars = plt.bar(new_list, mtd_sales, color=colors, width=.4)
 
@@ -41,7 +41,6 @@ def brand_wise_target_sales():
         for i, j in zip(new_list, mtd_target):
             label = format(int(j), ',')
             plt.annotate(label, (i, j), textcoords="offset points", xytext=(0, 5), ha='center', rotation=45)
-
 
 
         plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')

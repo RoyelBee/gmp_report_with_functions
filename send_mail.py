@@ -21,12 +21,12 @@ def send_mail(gpm_name):
     import Functions.executive_wise_sales_target as ex
     import Functions.brand_wise_target_sales as b
 
-    ban.banner(gpm_name)
-    gdata.GenerateReport(gpm_name)
-    dash.dash_kpi_generator(gpm_name)
-    cm.cumulative_target_sales(gpm_name)
-    ex.executive_sales_target(gpm_name)
-    b.brand_wise_target_sales()
+    # ban.banner(gpm_name)
+    # gdata.GenerateReport(gpm_name)
+    # dash.dash_kpi_generator(gpm_name)
+    # cm.cumulative_target_sales(gpm_name)
+    # ex.executive_sales_target(gpm_name)
+    # b.brand_wise_target_sales()
 
     # # --------- Add Image Border ---------------------------------------
     from PIL import Image

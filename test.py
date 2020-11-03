@@ -13,4 +13,8 @@ import Functions.executive_wise_sales_target as ex
 from PIL import Image
 
 import Functions.banner_code as ban
-ban.banner('Mr. A. K. M. Nawajesh Hossain')
+# ban.banner('Mr. A. K. M. Nawajesh Hossain')
+
+
+import Functions.brand_wise_target_sales as brand
+brand.brand_wise_target_sales()

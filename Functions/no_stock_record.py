@@ -69,5 +69,5 @@ def get_No_Stock_Records1():
 
 
         table1 = th + td + "</tr>\n"
-        print("No Sales table Created")
+        print("No Stock table Created")
         return table1
