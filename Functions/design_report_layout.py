@@ -228,11 +228,10 @@ def generate_layout(gpm_name):
                     <tr> """ + noStock.get_No_Stock_Records() + """
                 </table>
                 
-          
                 
-                <table border="1px solid gray" cellspacing ="20">
+                <table border="1px solid black" cellspacing ="20">
                  <tr>
-                    <th colspan="15" class="info"> """ + gpm.getGPMNFullInfo(gpm_name) + """ </th>
+                    <th colspan="15" class="info"> Master Data Set </th>
                     <th colspan="3" style="font-weight: bolder; font-size: 12px; background-color: #e6a454 ">SKF Plant</th>
                     <th rowspan="3" style="background-color: #d0ff89"><div>TDCL Central WH</div></th>
                     <th rowspan="3" style="background-color: #95ff89"><div>Branch Total</div></th>

@@ -1,5 +1,4 @@
-import os
-import Functions.send_mail as action
+import send_mail as action
 import error_alert as error
 
 

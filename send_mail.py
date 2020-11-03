@@ -75,7 +75,7 @@ def send_mail(gpm_name):
     today = str(date.day) + '/' + str(date.month) + '/' + str(date.year) + ' ' + date.strftime("%I:%M %p")
 
     # # ------------ Group email --------------------
-    subject = "Brand Wise Sales and Stock Report" + today
+    subject = "Brand Wise Sales and Stock Report " + today
     email_server_host = 'mail.transcombd.com'
     port = 25
 
@@ -96,8 +96,8 @@ def send_mail(gpm_name):
 
     # # We reference the image in the IMG SRC attribute by the ID we give it below
     msgText = MIMEText("""
-                                 """ + layout.generate_layout(gpm_name) + """
-                                """, 'html')
+                            """ + layout.generate_layout(gpm_name) + """
+                        """, 'html')
     msgAlternative.attach(msgText)
 
     # --- Read Banner Images
