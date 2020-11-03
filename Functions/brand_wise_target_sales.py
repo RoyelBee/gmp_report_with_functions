@@ -42,6 +42,8 @@ def brand_wise_target_sales():
             label = format(int(j), ',')
             plt.annotate(label, (i, j), textcoords="offset points", xytext=(0, 5), ha='center', rotation=45)
 
+
+
         plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
         plt.tight_layout()
         # plt.show()
@@ -52,7 +54,11 @@ def brand_wise_target_sales():
 
         fig, ax = plt.subplots(figsize=(9.6, 4.8))
         plt.title("Brand wise Target VS Sold Quantity", fontsize=16, color='black', fontweight='bold')
-        plt.text(0.2, 0.5, 'Due to data unavaibility the chart could not get generated.', color='red', fontsize=14)
+        plt.text(0.2, 0.5, 'Due to target unavailability the chart could not get generated.', color='red', fontsize=14)
+        plt.xlabel('Brand', fontsize=14, color='black', fontweight='bold')
+        plt.ylabel('Sales', fontsize=14, color='black', fontweight='bold')
+        plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
+
         plt.tight_layout()
         # plt.show()
         plt.savefig('./Images/brand_wise_target_vs_sold_quantity.png')

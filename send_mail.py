@@ -15,40 +15,36 @@ import path as d
 
 def send_mail(gpm_name):
     import Functions.banner_code as b
-    # b.banner()
-
     import Functions.generate_data as gdata
-    # gdata.GenerateReport(gpm_name)
-
     import Functions.dashboard as dash
-    # dash.dash_kpi_generator(gpm_name)
-
     import Functions.cumulative_target_sales as cm
-    # cm.cumulative_target_sales(gpm_name)
-
     import Functions.executive_wise_sales_target as ex
-    ex.executive_sales_target(gpm_name)
-
     import Functions.brand_wise_target_sales as b
+
+    # b.banner()
+    # gdata.GenerateReport(gpm_name)
+    # dash.dash_kpi_generator(gpm_name)
+    cm.cumulative_target_sales(gpm_name)
+    # ex.executive_sales_target(gpm_name)
     # b.brand_wise_target_sales()
 
     # # --------- Join Executive and Cumulative
-    from PIL import Image
-    kpi1 = Image.open("./Images/executive_wise_target_vs_sold_quantity.png")
-    kpi2 = Image.open("./Images/Cumulative_Day_Wise_Target_vs_Sales.png")
+    # from PIL import Image
+    # kpi1 = Image.open("./Images/executive_wise_target_vs_sold_quantity.png")
+    # kpi2 = Image.open("./Images/Cumulative_Day_Wise_Target_vs_Sales.png")
+    #
+    # imageSize = Image.new('RGB', (960, 480))  # 2110
+    # imageSize.paste(kpi1, (0, 0))
+    # imageSize.paste(kpi2, (401, 0))
 
-    imageSize = Image.new('RGB', (960, 480))  # 2110
-    imageSize.paste(kpi1, (0, 0))
-    imageSize.paste(kpi2, (401, 0))
-
-    imageSize.save("./Images/marge_2_into_1.png")
+    # imageSize.save("./Images/marge_2_into_1.png")
 
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')
 
     if data.empty:
         print('No data for print')
     else:
-        print('Else working')
+        print('Layout Generating')
         layout.generate_layout(gpm_name)
 
     to = gpm.getGPMEmail(gpm_name)
@@ -115,11 +111,18 @@ def send_mail(gpm_name):
     msgRoot.attach(dash)
 
     # --- Read Cumulative Target & Sales Images
-    fp = open(d.get_directory() + '/images/marge_2_into_1.png', 'rb')
+    fp = open(d.get_directory() + '/images/Cumulative_Day_Wise_Target_vs_Sales.png', 'rb')
     cm = MIMEImage(fp.read())
     fp.close()
     cm.add_header('Content-ID', '<cm>')
     msgRoot.attach(cm)
+
+    # --- Read Cumulative Target & Sales Images
+    fp = open(d.get_directory() + '/images/executive_wise_target_vs_sold_quantity.png', 'rb')
+    executive = MIMEImage(fp.read())
+    fp.close()
+    executive.add_header('Content-ID', '<executive>')
+    msgRoot.attach(executive)
 
     # --- Read Cumulative Target & Sales Images
     fp = open(d.get_directory() + '/images/brand_wise_target_vs_sold_quantity.png', 'rb')

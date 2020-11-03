@@ -27,8 +27,8 @@ try:
     action.send_mail('Mr. A. K. M. Nawajesh Hossain')
 except:
     error.send_error_msg('Mr. A. K. M. Nawajesh Hossain')
-#
-#
+
+
 # # # --------- GPM Mr. Fazal Mohammad Tanim -----------------------------
 # try:
 #     action.send_mail('Mr. Fazal Mohammad Tanim')

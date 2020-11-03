@@ -62,7 +62,7 @@ def executive_sales_target(name):
         Executive_sale = executive_sales_df['ItemSales'].tolist()
         # print(Executive_sale)
 
-        fig, ax = plt.subplots(figsize=(4, 4.8))
+        fig, ax = plt.subplots(figsize=(9.6, 4.8))
 
         colors = ['#3F93D0']
         bars = plt.bar(new_name3, Executive_sale, color=colors, width=.4)
@@ -86,10 +86,6 @@ def executive_sales_target(name):
             label = format(int(j), ',')
             plt.annotate(label, (i, j), textcoords="offset points", xytext=(0, 4), ha='center', rotation=45)
 
-        #
-        #
-        # # plt.scatter(new_list, mtd_achivemet,color='black')
-        #
         # print(mtd_achivemet)
         plt.legend(['Target','Sales'])
         plt.tight_layout()
@@ -97,12 +93,12 @@ def executive_sales_target(name):
         plt.savefig('./Images/executive_wise_target_vs_sold_quantity.png')
         print('Executive figure generated')
     except:
-        fig, ax = plt.subplots(figsize=(4, 4.8))
+        fig, ax = plt.subplots(figsize=(9.6, 4.8))
         plt.title("Executive Wise MTD Target & Sales", fontsize=12, color='black', fontweight='bold')
         plt.xlabel('Executive', fontsize=10, color='black', fontweight='bold')
         plt.ylabel('Sales', fontsize=10, color='black', fontweight='bold')
 
-        plt.text(0.05, 0.5, 'This chart is not generated.', color='red', fontsize=14)
+        plt.text(0.2, 0.5, 'Due to target unavailability the chart could not get generated.', color='red', fontsize=14)
         plt.legend(['Target', 'Sales'])
         plt.tight_layout()
         # plt.show()
