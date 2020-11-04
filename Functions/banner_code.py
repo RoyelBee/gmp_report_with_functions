@@ -5,7 +5,6 @@ from PIL import Image
 from datetime import datetime
 
 import path as dir
-print(dir.get_directory())
 
 def banner(gpm_name):
     date = datetime.today()

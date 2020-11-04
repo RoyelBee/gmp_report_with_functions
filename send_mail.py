@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import pandas as pd
 import Functions.design_report_layout as layout
-import Functions.read_gpm_info as gpm
+
 import path as d
 
 
@@ -21,12 +21,12 @@ def send_mail(gpm_name):
     import Functions.executive_wise_sales_target as ex
     import Functions.brand_wise_target_sales as b
 
-    # ban.banner(gpm_name)
+    ban.banner(gpm_name)
     # gdata.GenerateReport(gpm_name)
-    # dash.dash_kpi_generator(gpm_name)
-    # cm.cumulative_target_sales(gpm_name)
-    # ex.executive_sales_target(gpm_name)
-    # b.brand_wise_target_sales()
+    dash.dash_kpi_generator(gpm_name)
+    cm.cumulative_target_sales(gpm_name)
+    ex.executive_sales_target(gpm_name)
+    b.brand_wise_target_sales()
 
     # # --------- Add Image Border ---------------------------------------
     from PIL import Image
@@ -44,9 +44,9 @@ def send_mail(gpm_name):
     imageSize = Image.new('RGB', (962, 481))
     imageSize.paste(kpi2, (1, 0))
     imageSize.save("./Images/executive_wise_target_vs_sold_quantity.png")
-
+    #
     kpi3 = Image.open("./Images/brand_wise_target_vs_sold_quantity.png")
-    imageSize = Image.new('RGB', (962, 481))
+    imageSize = Image.new('RGB', (1602, 481))
     imageSize.paste(kpi3, (1, 0))
     imageSize.save("./Images/brand_wise_target_vs_sold_quantity.png")
 
@@ -60,17 +60,17 @@ def send_mail(gpm_name):
         print('Layout Generating')
         layout.generate_layout(gpm_name)
 
-    to = gpm.getGPMEmail(gpm_name)
+    # to = gpm.getGPMEmail(gpm_name)
+    #
+    # if (to == ['nawajesh@skf.transcombd.com', '']):
+    #     to = ['rejaul.islam@transcombd.com', '']
+    #     cc = ['', '']
+    #     bcc = ['', '']
+    #     print('Report Sending to = ', to)
 
-    if (to == ['nawajesh@skf.transcombd.com', '']):
-        to = ['rejaul.islam@transcombd.com', '']
-        cc = ['', '']
-        bcc = ['', '']
-        print('Report Sending to = ', to)
-
-    to = to
-    cc = cc
-    bcc = bcc
+    to = ['rejaul.islam@transcombd.com', '']
+    cc = ['', '']
+    bcc = ['', '']
 
     msgRoot = MIMEMultipart('related')
     me = 'erp-bi.service@transcombd.com'
@@ -186,7 +186,7 @@ def send_mail(gpm_name):
     print('Mail Send')
     print('-------------------')
     server.close()
-
-    # Html_file = open("testinghtml.html", "w")
-    # Html_file.write(layout.generate_layout(gpm_name))
-    # Html_file.close()
+    #
+    # # Html_file = open("testinghtml.html", "w")
+    # # Html_file.write(layout.generate_layout(gpm_name))
+    # # Html_file.close()

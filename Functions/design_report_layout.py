@@ -1,6 +1,6 @@
 import Functions.no_sales_record as noSales
 import Functions.no_stock_record as noStock
-import Functions.read_gpm_info as gpm
+# import Functions.read_gpm_info as gpm
 import Functions.sales_and_stock_record as SalesStock
 
 import Functions.branch_wise_stocks as branch_stock
@@ -211,7 +211,7 @@ def generate_layout(gpm_name):
                     </tr>
     
                     <tr> """ + noSales.get_No_Sales_Records() + """
-                </table>
+                    </table>
            
            <br> <br>
                 <table border="1px solid gray" width="79%">
@@ -238,8 +238,8 @@ def generate_layout(gpm_name):
                         <th rowspan="2" class="brand">BSL<br> No.</th>
                         <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
                         <th rowspan="2" class="item_sl">Item SL</th>
-                        <th rowspan="2" class="description1">Item Name</th>
-                        <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UOM</th>
+                        <th rowspan="2" class="description"> <div class="my_margin">.</div> Item Description</th>
+                        <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;UOM</th>
                         <th rowspan="2" class="uom">BOG</th>
                         <th rowspan="2" class="uom">BSL</th>
                         <th rowspan="2" class="uom">COM</th>

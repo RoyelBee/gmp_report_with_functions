@@ -1,8 +1,5 @@
 import matplotlib.pyplot as plt
-# from matplotlib.pyplot import figure as fig
 import pandas as pd
-import pyodbc
-import sys
 import numpy as np
 
 
@@ -17,35 +14,32 @@ def brand_wise_target_sales():
         mtd_target = read_file_for_all_data['MTD Sales Target'].to_list()
         mtd_achivemet = read_file_for_all_data['MTD Sales Acv'].to_list()
 
-        plt.subplots(figsize=(18, 6))
+        plt.subplots(figsize=(16, 4.8))
         colors = ['#3F93D0']
-        bars = plt.bar(new_list, mtd_sales, color=colors, width=.4)
+        bars = plt.bar(new_list, mtd_sales, color=colors, width=.75)
 
         plt.title("Brand wise Target VS Sold Quantity", fontsize=16, color='black', fontweight='bold')
         plt.xlabel('Brand', fontsize=14, color='black', fontweight='bold')
         plt.xticks(new_list, brand, rotation=90)
         plt.ylabel('Sales', fontsize=14, color='black', fontweight='bold')
 
-        plt.rcParams['text.color'] = 'black'
-
+        # plt.rcParams['text.color'] = 'black'
+        #
         for bar, achv in zip(bars, mtd_achivemet):
             yval = bar.get_height()
             wval = bar.get_width()
-            data = format(int(yval), ',') + '\n' + str(achv) + '%'
-            plt.text(bar.get_x() - wval / 2, yval * .6, data)
+            data = format(int(yval / 1000), ',')  # + '\n' + str(achv) + '%'
+            plt.text(bar.get_x() + .3 - wval / 2, yval * .5, data)  # - wval / 2
 
         lines = plt.plot(new_list, mtd_target, 'o-', color='Red')
-
-        plt.yticks(np.arange(0, max(mtd_target) + 0.5 * max(mtd_target), max(mtd_target) / 5))
+        #
 
         for i, j in zip(new_list, mtd_target):
-            label = format(int(j), ',')
-            plt.annotate(label, (i, j), textcoords="offset points", xytext=(0, 5), ha='center', rotation=45)
+            label = format(int(j / 1000), ',')
+            plt.annotate(str(label) + 'K', (i, j), textcoords="offset points", xytext=(0, 15), ha='center')
 
-
-        plt.legend(['Target', 'Sales with Ach%'], loc='best', fontsize='14')
+        plt.legend(['Target', 'Sales'], loc='best', fontsize='14')
         plt.tight_layout()
-        # plt.show()
         plt.savefig('./Images/brand_wise_target_vs_sold_quantity.png')
         print('Brand Figure generated')
 

@@ -8,7 +8,7 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import Functions.design_report_layout as layout
-import Functions.read_gpm_info as gpm
+# import Functions.read_gpm_info as gpm
 import path as d
 
 def send_error_msg(name):
