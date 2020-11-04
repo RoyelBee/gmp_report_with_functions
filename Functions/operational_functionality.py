@@ -45,6 +45,35 @@ def warning(daily_sales, total_stock):
 
         return set_color
 
+def branch_warning(total_stock):
+    if total_stock <= 0:
+        set_color = 'red'
+    else:
+
+        if total_stock <= 0:
+            set_color = '#ff2300'
+
+        # Super Under Stock
+        elif total_stock <= 15:
+            set_color = '#ff971a'
+
+        # Under Stock
+        elif total_stock <= 35:
+            set_color = '#eee298'
+
+        # Color for Normal
+        elif total_stock <= 45:
+            set_color = '#ffffff'
+
+        # Color for Over Stock
+        elif total_stock <= 60:
+            set_color = '#cbe14c'
+        else:
+            # Super over stock
+            set_color = '#fff900'
+
+        return set_color
+
 def create_dup_count_list(excel, colName):
     df = pd.DataFrame(excel)
     colRaw = df[colName].tolist()

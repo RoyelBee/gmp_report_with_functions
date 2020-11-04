@@ -49,99 +49,130 @@ def branch_wise_stocks_Records():
         for j in range(4, 5):
             # unit
             tabletd = tabletd + "<td class=\"style1\">" + str((sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(5, 6):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(6, 7):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(7, 8):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(8, 9):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(9, 10):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(10, 11):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(11, 12):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(12, 13):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(13, 14):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(14, 15):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(15, 16):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(16, 17):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(17, 18):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(18, 19):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(19, 20):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(20, 21):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(21, 22):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(22, 23):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(23, 24):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(24, 25):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(25, 26):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(26, 27):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(27, 28):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(28, 29):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(29, 30):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(30, 31):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(31, 32):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(32, 33):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(33, 34):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(34, 35):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j))))  + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
+
         for j in range(35, 36):
-            # unit
-            tabletd = tabletd + "<td class=\"style1\">" + str(int((sh.cell_value(i, j)))) + "</td>\n"
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.branch_warning(sh.cell_value(i, j))) + "\">" + str(int(sh.cell_value(i, j))) + "</td>\n"
 
         table1 = tabletd + "</tr>\n"
     print("No Sales table Created")
