@@ -1,10 +1,10 @@
+import Functions.item_wise_yesterday_sales as yesterday
 import Functions.no_sales_record as noSales
 import Functions.no_stock_record as noStock
 # import Functions.read_gpm_info as gpm
 import Functions.sales_and_stock_record as SalesStock
 
 import Functions.branch_wise_stocks as branch_stock
-
 def generate_layout(gpm_name):
     # print('GPM Name  = ', gpm_name)
     results = """ <!DOCTYPE html>
@@ -197,6 +197,24 @@ def generate_layout(gpm_name):
                 <img src="cid:cm"> <br>
                 <img src="cid:executive"> <br>
                 <img src="cid:brand"> <br> <br>
+                
+                <table border="1px solid gray" width="77%">
+                    <tr>
+                        <th colspan="6" style="background-color: #cbe14c"><h1>Item wise Yesterday Sales 
+                        Quantity </h1> </th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" class="brand">BSL<br> No.</th>
+                        <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                        <th rowspan="2" class="item_sl">Item SL</th>
+                        <th rowspan="2" class="description1">Item Description</th>
+                        <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UOM</th>
+                        <th rowspan="2" class="uom" style="text-align: right"> Yesterday Sales</th>
+                    </tr>
+                
+                   <tr> """ + yesterday.item_wise_yesterday_sales_Records()+ """
+                </table>
+
                 
                 <table border="1px solid gray" width="79%">
                     <tr>
