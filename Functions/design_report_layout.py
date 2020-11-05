@@ -198,11 +198,12 @@ def generate_layout(gpm_name):
                 <img src="cid:executive"> <br>
                 <img src="cid:brand"> <br> <br>
                 
-                <table border="1px solid gray" width="77%">
+                <table border="1px solid gray" width="79%">
                     <tr>
-                        <th colspan="6" style="background-color: #cbe14c"><h1>Item wise Yesterday Sales 
+                        <th colspan="6" style="background-color: #0beb9b "><h1>Item wise Yesterday Sales 
                         Quantity </h1> </th>
                     </tr>
+                    
                     <tr>
                         <th rowspan="2" class="brand">BSL<br> No.</th>
                         <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
@@ -213,12 +214,29 @@ def generate_layout(gpm_name):
                     </tr>
                 
                    <tr> """ + yesterday.item_wise_yesterday_sales_Records()+ """
-                </table>
+                </table>  <br> <br>
+            
+            <table border="1px solid gray" width="79%">
+                    <tr>
+                        <th colspan="5" style="background-color: #e3f865 "><h1> Yesterday No Sales Item </h1> </th>
+                    </tr>
+                    
+                    <tr>
+                        <th rowspan="2" class="brand">BSL<br> No.</th>
+                        <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                        <th rowspan="2" class="item_sl">Item SL</th>
+                        <th rowspan="2" class="description1">Item Description</th>
+                        <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UOM</th>
+                        
+                    </tr>
+                
+                   <tr> """ + yesterday.item_wise_yesterday_no_sales_Records()+ """
+                </table>  <br> <br>
 
                 
                 <table border="1px solid gray" width="79%">
                     <tr>
-                        <th colspan="5" style="background-color: #cbe14cf"><h1>No Sales Item: Last 3 Months</h1></th>
+                        <th colspan="5" style="background-color: #cbe14c" > <h1>No Sales Item: Last 3 Months</h1></th>
                     </tr>
                     <tr>
                         <th rowspan="2" class="brand">BSL No</th>
@@ -229,12 +247,12 @@ def generate_layout(gpm_name):
                     </tr>
     
                     <tr> """ + noSales.get_No_Sales_Records() + """
-                    </table>
+                    </table> 
            
            <br> <br>
                 <table border="1px solid gray" width="79%">
                     <tr>
-                        <th colspan="7" style="background-color: #34ce57;"><h1> No Stocks Item: Last 3 Months</h1></th>
+                        <th colspan="7" style="background-color: #faac9f;"><h1> No Stocks Item: Last 3 Months</h1></th>
                     </tr>
                     <tr>
                         <th rowspan="2" class="brand">BSL No</th>
@@ -246,12 +264,21 @@ def generate_layout(gpm_name):
                         <th rowspan="2" class="uom" style="text-align: right"> Estimated Sales</th>
                     </tr>
                     <tr> """ + noStock.get_No_Stock_Records() + """
-                </table>
+                </table>  <br> <br>
                 
                 <table border="1px solid gray" width="77%">
                     <tr>
-                        <th colspan="36" style="background-color: #34ce57;"><h1> Branch Wise Stock</h1></th>
+                        <th colspan="5" style="background-color: #34ce57;"><h1> Branch Wise Stock</h1></th>
+                        <th colspan="5" style="background-color: #ff2300" class="color_style"> Nill</th>
+                        <th colspan="5" style="background-color: #ff971a" class="color_style">Super Under Stock</th>
+                        <th colspan="5" style="background-color: #eee298;" class="color_style">Under Stock</th>
+                        <th colspan="5" class="color_style">Normal Stock</th>
+                        <th colspan="5" style="background-color: #cbe14c; color: black"   class="color_style">Over 
+                        Stock</th>
+                        <th colspan="6" style="background-color: #fff900; color: black"  class="color_style">Super Over 
+                        Stock</th>
                     </tr>
+                    
                     <tr>
                         <th rowspan="2" class="brand">BSL<br> No.</th>
                         <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
@@ -291,13 +318,13 @@ def generate_layout(gpm_name):
                         <th rowspan="2" class="uom">VRB</th>     
                     </tr>
                     <tr> """ + branch_stock.branch_wise_stocks_Records() + """
-                </table>
+                </table>  <br> <br>
 
 
            
                 <table border="1px solid gray" cellspacing ="20">
                  <tr>
-                    <th colspan="15" class="info" style="text-align: center"> 
+                    <th colspan="15" class="info" style="text-align: center">  All Information at a Glance
                     </th>
                     <th colspan="3" style="font-weight: bolder; font-size: 12px; background-color: #e6a454 ">SKF Plant</th>
                     <th rowspan="3" style="background-color: #d0ff89"><div>TDCL Central WH</div></th>

@@ -1,5 +1,5 @@
-
 import pandas as pd
+
 
 def number_style(value):
     if (len(value) > 6):
@@ -15,6 +15,7 @@ def number_style(value):
     else:
         return value
 
+
 def warning(daily_sales, total_stock):
     if daily_sales <= 0:
         return False
@@ -25,7 +26,7 @@ def warning(daily_sales, total_stock):
             set_color = '#ff2300'
 
         # Super Under Stock
-        elif days_passed <= 15:
+        elif days_passed >= 15:
             set_color = '#ff971a'
 
         # Under Stock
@@ -45,34 +46,39 @@ def warning(daily_sales, total_stock):
 
         return set_color
 
+
 def branch_warning(total_stock):
-    if total_stock <= 0:
+    s = str(total_stock)
+
+    if s== '-' or total_stock <= 0:
         set_color = 'red'
+    # if total_stock <= 0:
+    #     set_color = '#ff2300'
+
+    # Super Under Stock
+    elif total_stock >= 1 and total_stock <= 15:
+        set_color = '#ff971a'
+
+    # Under Stock
+    elif total_stock >= 16 and total_stock <= 35:
+        set_color = '#eee298'
+
+    # Color for Normal
+    elif total_stock >= 36 and total_stock <= 45:
+        set_color = '#ffffff'
+
+    # Color for Over Stock
+    elif total_stock >= 46 and total_stock <= 60:
+        set_color = '#cbe14c'
+
+    elif total_stock >= 61 and total_stock <= 300000:
+        set_color = '#fff900'
     else:
+        # Super over stock
+        set_color = 'red'
 
-        if total_stock <= 0:
-            set_color = '#ff2300'
+    return set_color
 
-        # Super Under Stock
-        elif total_stock <= 15:
-            set_color = '#ff971a'
-
-        # Under Stock
-        elif total_stock <= 35:
-            set_color = '#eee298'
-
-        # Color for Normal
-        elif total_stock <= 45:
-            set_color = '#ffffff'
-
-        # Color for Over Stock
-        elif total_stock <= 60:
-            set_color = '#cbe14c'
-        else:
-            # Super over stock
-            set_color = '#fff900'
-
-        return set_color
 
 def create_dup_count_list(excel, colName):
     df = pd.DataFrame(excel)
