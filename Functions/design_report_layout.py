@@ -1,10 +1,13 @@
 import Functions.item_wise_yesterday_sales as yesterday
 import Functions.no_sales_record as noSales
 import Functions.no_stock_record as noStock
-# import Functions.read_gpm_info as gpm
+import Functions.read_gpm_info as gpm
 import Functions.sales_and_stock_record as SalesStock
 
 import Functions.branch_wise_stocks as branch_stock
+import Functions.branch_stock_summery as bs
+
+
 def generate_layout(gpm_name):
     # print('GPM Name  = ', gpm_name)
     results = """ <!DOCTYPE html>
@@ -263,68 +266,88 @@ def generate_layout(gpm_name):
                         <th rowspan="2" class="uom">Total Ordered</th>
                         <th rowspan="2" class="uom" style="text-align: right"> Estimated Sales</th>
                     </tr>
-                    <tr> """ + noStock.get_No_Stock_Records() + """
+                    <tr> """ + noStock.get_No_Stock_Records() + """  </tr>
                 </table>  <br> <br>
+        
+        <table border="1px solid gray" width="79%">
+        <tr>
+            <th colspan="7" style="background-color: #cbe14c"><h1>Branch Wise Item Stock Category</h1></th>
+        </tr>
+        <tr>
+            <th rowspan="2" class="brand">Branch</th>
+            <th rowspan="2" class="brand"> Nill</th>
+            <th rowspan="2" class="item_sl">Super Under Stock</th>
+            <th rowspan="2" class="description1">Under Stock</th>
+            <th rowspan="2" class="uom" style="text-align: right"> Normal Stock</th>
+            <th rowspan="2" class="uom" style="text-align: right">Over Stock</th>
+            <th rowspan="2" class="uom" style="text-align: right">Super Over Stock</th>
+        </tr>
+
+        <tr> """ + bs.branch_wise_nil_us_ss() + """ 
+        
+        </table>
+        <br> <br>
+
+
+            <table border="1px solid gray" width="77%">
+                <tr>
+                    <th colspan="5" style="background-color: #34ce57;"><h1> Branch Wise Stock</h1></th>
+                    <th colspan="5" style="background-color: #ff2300" class="color_style"> Nill</th>
+                    <th colspan="5" style="background-color: #ff971a" class="color_style">Super Under Stock</th>
+                    <th colspan="5" style="background-color: #eee298;" class="color_style">Under Stock</th>
+                    <th colspan="5" class="color_style">Normal Stock</th>
+                    <th colspan="5" style="background-color: #cbe14c; color: black"   class="color_style">Over 
+                    Stock</th>
+                    <th colspan="6" style="background-color: #fff900; color: black"  class="color_style">Super Over 
+                    Stock</th>
+                </tr>
                 
-                <table border="1px solid gray" width="77%">
-                    <tr>
-                        <th colspan="5" style="background-color: #34ce57;"><h1> Branch Wise Stock</h1></th>
-                        <th colspan="5" style="background-color: #ff2300" class="color_style"> Nill</th>
-                        <th colspan="5" style="background-color: #ff971a" class="color_style">Super Under Stock</th>
-                        <th colspan="5" style="background-color: #eee298;" class="color_style">Under Stock</th>
-                        <th colspan="5" class="color_style">Normal Stock</th>
-                        <th colspan="5" style="background-color: #cbe14c; color: black"   class="color_style">Over 
-                        Stock</th>
-                        <th colspan="6" style="background-color: #fff900; color: black"  class="color_style">Super Over 
-                        Stock</th>
-                    </tr>
-                    
-                    <tr>
-                        <th rowspan="2" class="brand">BSL<br> No.</th>
-                        <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                        <th rowspan="2" class="item_sl">Item SL</th>
-                        <th rowspan="2" class="description"> <div class="my_margin">.</div> Item Description</th>
-                        <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;UOM</th>
-                        <th rowspan="2" class="uom">BOG</th>
-                        <th rowspan="2" class="uom">BSL</th>
-                        <th rowspan="2" class="uom">COM</th>
-                        <th rowspan="2" class="uom">COX</th>
-                        <th rowspan="2" class="uom">CTG</th>
-                        <th rowspan="2" class="uom">CTN</th>
-                        <th rowspan="2" class="uom">DNJ</th>
-                        <th rowspan="2" class="uom">FEN</th>
-                        <th rowspan="2" class="uom">FRD</th>
-                        <th rowspan="2" class="uom">GZP</th>
-                        <th rowspan="2" class="uom">HZJ</th>
-                        <th rowspan="2" class="uom">JES</th>
-                        <th rowspan="2" class="uom">KHL</th>
-                        <th rowspan="2" class="uom">KRN</th>
-                        <th rowspan="2" class="uom">KSG</th>
-                        <th rowspan="2" class="uom">KUS</th>
-                        <th rowspan="2" class="uom">MHK</th>
-                        <th rowspan="2" class="uom">MIR</th>
-                        <th rowspan="2" class="uom">MLV</th>
-                        <th rowspan="2" class="uom">MOT</th>
-                        <th rowspan="2" class="uom">MYM</th>
-                        <th rowspan="2" class="uom">NAJ</th>
-                        <th rowspan="2" class="uom">NOK</th>
-                        <th rowspan="2" class="uom">PAT</th>
-                        <th rowspan="2" class="uom">PBN</th>
-                        <th rowspan="2" class="uom">RAJ</th>
-                        <th rowspan="2" class="uom">RNG</th>
-                        <th rowspan="2" class="uom">SAV</th>
-                        <th rowspan="2" class="uom">SYL</th>
-                        <th rowspan="2" class="uom">TGL</th>
-                        <th rowspan="2" class="uom">VRB</th>     
-                    </tr>
-                    <tr> """ + branch_stock.branch_wise_stocks_Records() + """
-                </table>  <br> <br>
+                <tr>
+                    <th rowspan="2" class="brand">BSL<br> No.</th>
+                    <th rowspan="2" class="brand"> Brand &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th rowspan="2" class="item_sl">Item SL</th>
+                    <th rowspan="2" class="description"> <div class="my_margin">.</div> Item Description</th>
+                    <th rowspan="2" class="uom" style="text-align: right"> &nbsp;&nbsp;&nbsp;&nbsp;UOM</th>
+                    <th rowspan="2" class="uom">BOG</th>
+                    <th rowspan="2" class="uom">BSL</th>
+                    <th rowspan="2" class="uom">COM</th>
+                    <th rowspan="2" class="uom">COX</th>
+                    <th rowspan="2" class="uom">CTG</th>
+                    <th rowspan="2" class="uom">CTN</th>
+                    <th rowspan="2" class="uom">DNJ</th>
+                    <th rowspan="2" class="uom">FEN</th>
+                    <th rowspan="2" class="uom">FRD</th>
+                    <th rowspan="2" class="uom">GZP</th>
+                    <th rowspan="2" class="uom">HZJ</th>
+                    <th rowspan="2" class="uom">JES</th>
+                    <th rowspan="2" class="uom">KHL</th>
+                    <th rowspan="2" class="uom">KRN</th>
+                    <th rowspan="2" class="uom">KSG</th>
+                    <th rowspan="2" class="uom">KUS</th>
+                    <th rowspan="2" class="uom">MHK</th>
+                    <th rowspan="2" class="uom">MIR</th>
+                    <th rowspan="2" class="uom">MLV</th>
+                    <th rowspan="2" class="uom">MOT</th>
+                    <th rowspan="2" class="uom">MYM</th>
+                    <th rowspan="2" class="uom">NAJ</th>
+                    <th rowspan="2" class="uom">NOK</th>
+                    <th rowspan="2" class="uom">PAT</th>
+                    <th rowspan="2" class="uom">PBN</th>
+                    <th rowspan="2" class="uom">RAJ</th>
+                    <th rowspan="2" class="uom">RNG</th>
+                    <th rowspan="2" class="uom">SAV</th>
+                    <th rowspan="2" class="uom">SYL</th>
+                    <th rowspan="2" class="uom">TGL</th>
+                    <th rowspan="2" class="uom">VRB</th>     
+                </tr>
+                <tr> """ + branch_stock.branch_wise_stocks_Records() + """
+            </table>  <br> <br>
 
 
            
                 <table border="1px solid gray" cellspacing ="20">
                  <tr>
-                    <th colspan="15" class="info" style="text-align: center">  All Information at a Glance
+                    <th colspan="15" class="info" style="text-align: center"> """ + gpm.getGPMNFullInfo(gpm_name) + """
                     </th>
                     <th colspan="3" style="font-weight: bolder; font-size: 12px; background-color: #e6a454 ">SKF Plant</th>
                     <th rowspan="3" style="background-color: #d0ff89"><div>TDCL Central WH</div></th>
@@ -343,6 +366,7 @@ def generate_layout(gpm_name):
                     <th rowspan="2" class="item_sl">Item SL</th>
                     <th rowspan="2" class="description"> <div class="my_margin">.</div> Item Description</th>
                     <th rowspan="2" class="uom"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UOM &nbsp;</th>
+                    <th rowspan="2" class="sales_monthly_trend">Yesterday Sales </th>
                     <th rowspan="2" class="sales_monthly_trend">Avg Sales Per Day </th>
                     <th rowspan="2" class="sales_monthly_trend">Monthly Sales Target</th>
                     <th rowspan="2" class="style2" ><div>MTD Sales Target</div></th>

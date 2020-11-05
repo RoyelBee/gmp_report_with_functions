@@ -333,6 +333,11 @@ def get_Sales_and_Stock_Records():
             tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
                       str(ofn.warning(vrb, VRB)) + "\">" + str(ofn.number_style(str(VRB))) + "</td>\n"
 
+        for j in range(82, 83):
+            VRB = int(sh.cell_value(i, j))
+            tabletd = tabletd + "<td class=\"remarks\"style=\"background-color:" + \
+                      str(ofn.warning(vrb, VRB)) + "\">" + str(ofn.number_style(str(VRB))) + "</td>\n"
+
         table = tabletd + "</tr>\n"
     print("Master Table Created")
     return table

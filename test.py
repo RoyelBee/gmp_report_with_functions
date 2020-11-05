@@ -1,3 +1,2 @@
-
-import Functions.item_wise_yesterday_sales as y
-y.item_wise_yesterday_sales_Records()
+import Functions.banner_code as b
+b.banner()

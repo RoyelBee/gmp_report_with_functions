@@ -10,11 +10,14 @@ def brand_wise_target_sales():
         read_file_for_all_data = read_file_for_all_data.sort_values('Actual Sales MTD', ascending=False)
         brand = read_file_for_all_data['BRAND'].to_list()
         mtd_sales = read_file_for_all_data['Actual Sales MTD'].to_list()
+        mtd_sales=mtd_sales[:10]
         new_list = range(len(mtd_sales))
         mtd_target = read_file_for_all_data['MTD Sales Target'].to_list()
+        mtd_target = mtd_target[:10]
         mtd_achivemet = read_file_for_all_data['MTD Sales Acv'].to_list()
+        mtd_achivemet = mtd_achivemet[:10]
 
-        plt.subplots(figsize=(16, 4.8))
+        plt.subplots(figsize=(9.6, 4.8))
         colors = ['#3F93D0']
         bars = plt.bar(new_list, mtd_sales, color=colors, width=.75)
 

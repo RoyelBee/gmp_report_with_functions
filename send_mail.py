@@ -7,11 +7,12 @@ from email.mime.base import MIMEBase
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import pandas as pd
+
 import Functions.design_report_layout as layout
-
+import pandas as pd
+import numpy as np
 import path as d
-
+import xlsxwriter
 
 def send_mail(gpm_name):
     import Functions.banner_code as ban
@@ -21,15 +22,15 @@ def send_mail(gpm_name):
     import Functions.executive_wise_sales_target as ex
     import Functions.brand_wise_target_sales as b
 
-    # ban.banner(gpm_name)
-    gdata.GenerateReport(gpm_name)
+    ban.banner()
+    # gdata.GenerateReport(gpm_name)
     # dash.dash_kpi_generator(gpm_name)
     # cm.cumulative_target_sales(gpm_name)
     # ex.executive_sales_target(gpm_name)
     # b.brand_wise_target_sales()
     #
     # # # --------- Add Image Border ---------------------------------------
-    # from PIL import Image
+    from PIL import Image
     # da = Image.open("./Images/dashboard.png")
     # imageSize = Image.new('RGB', (962, 297))
     # imageSize.paste(da, (1, 0))
@@ -46,10 +47,111 @@ def send_mail(gpm_name):
     # imageSize.save("./Images/executive_wise_target_vs_sold_quantity.png")
     # #
     # kpi3 = Image.open("./Images/brand_wise_target_vs_sold_quantity.png")
-    # imageSize = Image.new('RGB', (1602, 481))
+    # imageSize = Image.new('RGB', (962, 481))
     # imageSize.paste(kpi3, (1, 0))
     # imageSize.save("./Images/brand_wise_target_vs_sold_quantity.png")
 
+    # # -------------------------------------------------------------------
+    # # ------ Branch wise stock summery -----------------------------------
+
+    import sys
+
+    # df = pd.read_excel('Data/gpm_data.xlsx')
+    #
+    # cols = range(52, 83)
+    # df2 = pd.read_excel('Data/gpm_data.xlsx', usecols=cols)
+    # l = list(df2.columns)
+    #
+    # cols2 = range(19, 50)
+    # df3 = pd.read_excel('Data/gpm_data.xlsx', usecols=cols2)
+    # l2 = list(df3.columns)
+    #
+    # final_list = []
+    #
+    # for branches, avgq in zip(l, l2):
+    #     branch_current_stock = df[branches].to_list()
+    #
+    #     branch_avg_sell = df[avgq].to_list()
+    #
+    #     for each, each2 in zip(branch_current_stock, branch_avg_sell):
+    #         if each == 0:
+    #             index = branch_current_stock.index(each)
+    #             branch_current_stock[index] = 1
+    #         if each2 == 0:
+    #             index2 = branch_avg_sell.index(each2)
+    #             branch_avg_sell[index2] = 1
+    #
+    #     np.seterr(divide='ignore', invalid='ignore')
+    #     branch_stock_limit = np.divide(branch_current_stock, branch_avg_sell)
+    #     branch_stock_limit_list = list(branch_stock_limit)
+    #
+    #     new_list_nill = []
+    #     new_list_super_under_stock = []
+    #     new_list_under_stock = []
+    #     new_list_normal_stock = []
+    #     new_list_over_stock = []
+    #     new_list_super_over_stock = []
+    #
+    #     for i in branch_stock_limit_list:
+    #         # Color for NIL
+    #         if i <= 0:
+    #             new_list_nill.append(i)
+    #         # Super Under Stock
+    #         elif i <= 15:
+    #             new_list_super_under_stock.append(i)
+    #
+    #         # Under Stock
+    #         elif i <= 35:
+    #             new_list_under_stock.append(i)
+    #
+    #         # Color for Normal
+    #         elif i <= 45:
+    #             new_list_normal_stock.append(i)
+    #
+    #         # Color for Over Stock
+    #         elif i <= 60:
+    #             new_list_over_stock.append(i)
+    #         else:
+    #             # Super over stock
+    #             new_list_super_over_stock.append(i)
+    #
+    #     sum_new_list_nill = len(new_list_nill)
+    #     sum_new_list_super_under_stock = len(new_list_super_under_stock)
+    #     sum_new_list_under_stock = len(new_list_under_stock)
+    #     sum_new_list_normal_stock = len(new_list_normal_stock)
+    #     sum_new_list_over_stock = len(new_list_over_stock)
+    #     sum_new_list_super_over_stock = len(new_list_super_over_stock)
+    #
+    #     sum_list = [sum_new_list_nill, sum_new_list_super_under_stock, sum_new_list_under_stock,
+    #                 sum_new_list_normal_stock, sum_new_list_over_stock, sum_new_list_super_over_stock]
+    #     final_list.append(sum_list)
+    #
+    # workbook = xlsxwriter.Workbook('Data/branch_wise_nil_us_ss.xlsx')
+    # worksheet = workbook.add_worksheet()
+    #
+    # len = range(1, len(l) + 1)
+    #
+    # for i, j in zip(l, len):
+    #     worksheet.write(j, 0, i)
+    #
+    # stock_list = ['Branch', 'Nill', 'Super Under Stock', 'Under Stock', 'Normal Stock', 'Over Stock',
+    #               'Super Over Stock']
+    #
+    # len2 = range(0, 7)
+    # for i, j in zip(stock_list, len2):
+    #     worksheet.write(0, j, i)
+    #
+    # # Branch wise value set
+    # all_row_length = range(0, 31)
+    # all_len = range(0, 6)
+    #
+    # for a in all_row_length:
+    #     for b in all_len:
+    #         c = final_list[a][b]
+    #         # print(c)
+    #         worksheet.write(a + 1, b + 1, c)
+    # workbook.close()
+    # print('Branch wise stock summery generated')
 
     # # ------------- HTML generating section ------------------------------
     data = pd.read_excel('./Data/html_data_Sales_and_Stock.xlsx')

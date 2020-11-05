@@ -101,3 +101,5 @@ def branch_stock_status():
             worksheet.write(a + 1, b + 1, c)
     workbook.close()
     print('Branch wise stock status data generateg')
+
+
